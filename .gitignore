@@ -1,0 +1,5 @@
+.claude/plans/
+.claude/settings.local.json
+.claude/projects/
+node_modules/
+.DS_Store
