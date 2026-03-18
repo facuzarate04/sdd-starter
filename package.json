@@ -1,0 +1,35 @@
+{
+  "name": "sdd-starter",
+  "version": "1.0.0",
+  "description": "Spec Driven Development framework for AI coding agents. Structured specs, plans, and tasks with classical requirements engineering.",
+  "type": "module",
+  "bin": {
+    "sdd-starter": "./bin/sdd.js"
+  },
+  "files": [
+    "bin/",
+    "lib/",
+    "scaffold/",
+    "LICENSE",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "sdd",
+    "spec-driven-development",
+    "claude-code",
+    "ai-agent",
+    "requirements-engineering",
+    "scaffolding",
+    "specifications",
+    "software-architecture"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/facuzarate04/sdd-starter.git"
+  },
+  "homepage": "https://github.com/facuzarate04/sdd-starter#readme"
+}

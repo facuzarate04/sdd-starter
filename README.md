@@ -4,25 +4,58 @@ A lightweight Spec Driven Development framework for AI coding agents. Combines c
 
 Built for [Claude Code](https://claude.ai/claude-code). Tested on real production projects.
 
+## Quick Start
+
+```bash
+# Install into your project (one command)
+npx sdd-starter init
+
+# Or specify a path
+npx sdd-starter init ./my-project
+
+# Open Claude Code in your project, then:
+/sdd-bootstrap          # One-time: agent reads codebase, fills docs and domains
+/sdd-new-feature        # Start a feature spec
+/sdd-advance            # Move to next phase (plan -> tasks -> implement)
+/sdd-verify             # Validate code against acceptance criteria
+/sdd-complete           # Archive, collect metrics, update domains
+```
+
+Safe to run multiple times. Never overwrites existing files.
+
+## Update
+
+Sync latest templates and commands without touching your project-specific files:
+
+```bash
+npx sdd-starter@latest update
+```
+
+## Preview Changes
+
+```bash
+npx sdd-starter init --dry-run
+```
+
 ## Three Layers of Context
 
 ```mermaid
 block-beta
   columns 1
-  block:system["🏗️ SYSTEM LEVEL"]
+  block:system["SYSTEM LEVEL"]
     columns 3
     product["product.md\nWhat the product does"]
     tech["tech.md\nStack & constraints"]
     structure["structure.md\nCode organization"]
   end
   space
-  block:domain["🔷 DOMAIN LEVEL"]
+  block:domain["DOMAIN LEVEL"]
     columns 2
     overview["overview.md\nComponents, patterns,\nextension points, constraints"]
     decisions["decisions.md\nArchitecture Decision Records"]
   end
   space
-  block:feature["🎯 FEATURE LEVEL"]
+  block:feature["FEATURE LEVEL"]
     columns 3
     spec["spec.md\nUse cases, requirements,\nacceptance criteria,\nimpact analysis"]
     plan["plan.md\nTechnical design,\nADRs, file list"]
@@ -42,11 +75,11 @@ block-beta
 ```mermaid
 graph TD
     Q{"What's the change?"}
-    Q -->|"Typo, config"| H["⚡ Hotfix\nJust code it"]
-    Q -->|"Known defect"| B["🐛 Bug\n/sdd-new-bug"]
-    Q -->|"1-2 files"| S["📝 Small\n/sdd-new-improvement"]
-    Q -->|"Multi-file"| M["📋 Medium\n/sdd-new-feature"]
-    Q -->|"Cross-domain"| C["🏗️ Complex\n/sdd-new-feature"]
+    Q -->|"Typo, config"| H["Hotfix\nJust code it"]
+    Q -->|"Known defect"| B["Bug\n/sdd-new-bug"]
+    Q -->|"1-2 files"| S["Small\n/sdd-new-improvement"]
+    Q -->|"Multi-file"| M["Medium\n/sdd-new-feature"]
+    Q -->|"Cross-domain"| C["Complex\n/sdd-new-feature"]
 
     H -.->|"No artifacts"| done["Done"]
     B -.->|"Bug report + impact analysis"| done
@@ -80,23 +113,6 @@ graph LR
     style V fill:#50b87a,color:#fff,stroke:#3a9660
     style C fill:#40a0a0,color:#fff,stroke:#2d8080
 ```
-
-## Quick Start
-
-```bash
-# Clone and install into your project
-git clone https://github.com/facuzarate04/sdd-starter.git
-./sdd-starter/init.sh /path/to/your/project
-
-# Open Claude Code in your project, then:
-/sdd-bootstrap          # One-time: agent reads codebase, fills docs and domains
-/sdd-new-feature        # Start a feature spec
-/sdd-advance            # Move to next phase (plan → tasks → implement)
-/sdd-verify             # Validate code against acceptance criteria
-/sdd-complete           # Archive, collect metrics, update domains
-```
-
-Safe to run multiple times. Never overwrites existing files. Use `--update` to sync latest templates.
 
 For detailed documentation, see the [full guide](docs/guide.md).
 
